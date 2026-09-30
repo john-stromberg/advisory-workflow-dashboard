@@ -27,7 +27,7 @@
     "id": "wealth-planning-calculator",
     "name": "Wealth Planning Calculator",
     "category": "Planning",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/wealth-planning-calculator",
