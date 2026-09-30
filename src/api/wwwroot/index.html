@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Advisory Workflow Dashboard</title>
+  <style>
+    :root { font-family: Segoe UI, Arial, sans-serif; color-scheme: light; }
+    body { margin: 0; background: #f3f5fa; color: #1b1f2a; }
+    header { background: #1f3c88; color: #fff; padding: 18px 22px; }
+    header h1 { margin: 0; font-size: 22px; }
+    header p { margin: 6px 0 0; opacity: .9; }
+    main { padding: 18px; }
+    .toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+    button { border: 0; border-radius: 8px; padding: 9px 12px; cursor: pointer; background: #1f3c88; color: #fff; }
+    button.secondary { background: #4a5f9c; }
+    #status { font-size: 13px; color: #2a3558; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+    .tile { background: #fff; border-radius: 10px; box-shadow: 0 1px 4px rgba(0,0,0,.1); padding: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .meta { font-size: 12px; color: #5a6482; }
+    .row { display: flex; justify-content: space-between; gap: 10px; align-items: center; }
+    .badge { font-size: 11px; background: #e8ecff; color: #2f3f7a; padding: 3px 8px; border-radius: 999px; }
+    .link { color: #1f3c88; text-decoration: none; font-size: 13px; }
+    .link:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Advisory Workflow Dashboard</h1>
+    <p>Central advisor workspace with modular tools and loose integration registry.</p>
+  </header>
+  <main>
+    <div class="toolbar">
+      <button id="btnRefresh">Refresh Modules</button>
+      <button id="btnOpenMeetingPrep" class="secondary">Open Meeting Prep</button>
+      <span id="status">Loading module registry...</span>
+    </div>
+    <div id="moduleGrid" class="grid"></div>
+  </main>
+  <script>
+    const statusEl = document.getElementById("status");
+    const gridEl = document.getElementById("moduleGrid");
+
+    function setStatus(message, isError = false) {
+      statusEl.textContent = message;
+      statusEl.style.color = isError ? "#b00020" : "#2a3558";
+    }
+
+    async function loadRegistry() {
+      try {
+        setStatus("Loading module registry...");
+        const response = await fetch("/api/module-registry");
+        const data = await response.json();
+        if (!response.ok) {
+          throw new Error(data?.message || `${response.status} ${response.statusText}`);
+        }
+
+        renderTiles(data.modules || []);
+        setStatus(`Loaded ${(data.modules || []).length} modules.`);
+      } catch (error) {
+        setStatus(`Failed to load registry: ${error.message}`, true);
+      }
+    }
+
+    function renderTiles(modules) {
+      gridEl.innerHTML = "";
+      for (const module of modules) {
+        const tile = document.createElement("section");
+        tile.className = "tile";
+
+        const routeOrRepo = module.integrationType === "internal"
+          ? module.route
+          : module.repositoryUrl;
+
+        const actionLabel = module.integrationType === "internal"
+          ? "Open Module"
+          : "Open Repository";
+
+        tile.innerHTML = `
+          <div class="row">
+            <strong>${module.name}</strong>
+            <span class="badge">${module.status}</span>
+          </div>
+          <div class="meta">${module.category} • ${module.integrationType}</div>
+          <div>${module.description}</div>
+          <div class="row">
+            <a class="link" href="${module.repositoryUrl}" target="_blank" rel="noreferrer">Repo</a>
+            <button data-target="${routeOrRepo}" data-type="${module.integrationType}" ${module.isEnabled ? "" : "disabled"}>${actionLabel}</button>
+          </div>
+        `;
+
+        const button = tile.querySelector("button");
+        button.addEventListener("click", () => {
+          const target = button.getAttribute("data-target");
+          const type = button.getAttribute("data-type");
+          if (!target) return;
+          if (type === "internal") {
+            window.location.href = target;
+          } else {
+            window.open(target, "_blank", "noopener");
+          }
+        });
+
+        gridEl.appendChild(tile);
+      }
+    }
+
+    document.getElementById("btnRefresh").addEventListener("click", loadRegistry);
+    document.getElementById("btnOpenMeetingPrep").addEventListener("click", () => {
+      window.location.href = "/modules/meeting-prep.html";
+    });
+
+    loadRegistry();
+  </script>
+</body>
+</html>

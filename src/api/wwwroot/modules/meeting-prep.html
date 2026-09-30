@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meeting Prep Module</title>
+  <style>
+    :root { color-scheme: light; font-family: Segoe UI, Arial, sans-serif; }
+    body { margin: 0; background: #f4f6fb; color: #1b1f2a; }
+    header { background: #1f3c88; color: #fff; padding: 16px 24px; }
+    header a { color: #dce4ff; text-decoration: none; font-size: 13px; }
+    main { padding: 16px; display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
+    .card { background: #fff; border-radius: 10px; box-shadow: 0 1px 3px rgba(0,0,0,.1); padding: 14px; }
+    .span-4 { grid-column: span 4; }
+    .span-6 { grid-column: span 6; }
+    .span-12 { grid-column: span 12; }
+    label { display: block; font-size: 12px; margin: 6px 0 4px; color: #4c5570; }
+    input, select, textarea { width: 100%; box-sizing: border-box; padding: 8px; border: 1px solid #c6cee4; border-radius: 6px; background: #fff; }
+    button { margin: 6px 6px 0 0; border: 0; border-radius: 6px; background: #1f3c88; color: #fff; padding: 8px 10px; cursor: pointer; }
+    button.secondary { background: #51639a; }
+    button.warn { background: #b06b00; }
+    pre { background: #0f172a; color: #e2e8f0; padding: 10px; border-radius: 8px; max-height: 280px; overflow: auto; }
+    #status { min-height: 22px; font-size: 13px; }
+    ul { margin: 8px 0 0 18px; padding: 0; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Client Meeting Prep</h1>
+    <a href="/">? Back to Advisory Dashboard</a>
+  </header>
+  <main>
+    <section class="card span-4">
+      <h3>1) Sample Clients</h3>
+      <button id="btnLoadClients">Load Clients</button>
+      <label for="clientSelect">Client</label>
+      <select id="clientSelect"></select>
+      <button id="btnQuickstart" class="secondary">Quickstart Packet</button>
+    </section>
+    <section class="card span-4">
+      <h3>2) Manual Packet</h3>
+      <label for="meetingDate">Meeting Date</label>
+      <input id="meetingDate" type="date" />
+      <label for="lastMeetingDate">Last Meeting Date</label>
+      <input id="lastMeetingDate" type="date" />
+      <button id="btnCreatePacket">Create Packet</button>
+      <label for="packetIdInput">Packet ID</label>
+      <input id="packetIdInput" placeholder="Packet GUID" />
+      <button id="btnLoadPacket" class="secondary">Load Packet</button>
+    </section>
+    <section class="card span-4">
+      <h3>3) Workflow Actions</h3>
+      <button id="btnRefresh">Refresh</button>
+      <button id="btnSubmitReview" class="warn">Submit Review</button>
+      <label for="approvalNotes">Approval Notes</label>
+      <textarea id="approvalNotes" rows="3">Approved from dashboard UI</textarea>
+      <button id="btnApprove">Approve</button>
+    </section>
+    <section class="card span-6">
+      <h3>4) Office Exports</h3>
+      <button id="btnExportExcel">Export Excel</button>
+      <button id="btnExportPowerPoint">Export PowerPoint</button>
+      <button id="btnOutlookDraft">Create Outlook Draft</button>
+      <pre id="exportOutput">No export activity yet.</pre>
+    </section>
+    <section class="card span-6">
+      <h3>5) Audit Timeline</h3>
+      <button id="btnLoadAudit">Load Audit Events</button>
+      <ul id="auditList"></ul>
+    </section>
+    <section class="card span-12">
+      <h3>Packet Snapshot</h3>
+      <pre id="packetOutput">No packet selected.</pre>
+      <div id="status">Ready.</div>
+    </section>
+  </main>
+  <script>
+    const ui = {
+      clientSelect: document.getElementById("clientSelect"),
+      meetingDate: document.getElementById("meetingDate"),
+      lastMeetingDate: document.getElementById("lastMeetingDate"),
+      packetIdInput: document.getElementById("packetIdInput"),
+      approvalNotes: document.getElementById("approvalNotes"),
+      packetOutput: document.getElementById("packetOutput"),
+      exportOutput: document.getElementById("exportOutput"),
+      auditList: document.getElementById("auditList"),
+      status: document.getElementById("status")
+    };
+
+    function setStatus(message, isError = false) {
+      ui.status.textContent = message;
+      ui.status.style.color = isError ? "#b00020" : "#1b1f2a";
+    }
+
+    async function api(path, options = {}) {
+      const response = await fetch(path, {
+        headers: { "Content-Type": "application/json" },
+        ...options
+      });
+
+      const text = await response.text();
+      let payload = null;
+      if (text) {
+        try { payload = JSON.parse(text); } catch { payload = text; }
+      }
+
+      if (!response.ok) {
+        throw new Error(payload?.message || `${response.status} ${response.statusText}`);
+      }
+
+      return payload;
+    }
+
+    function bindPacket(packet) {
+      ui.packetIdInput.value = packet.packetId;
+      ui.packetOutput.textContent = JSON.stringify(packet, null, 2);
+    }
+
+    async function loadClients() {
+      try {
+        const clients = await api("/api/demo/clients");
+        ui.clientSelect.innerHTML = "";
+        clients.forEach(c => {
+          const option = document.createElement("option");
+          option.value = c.id;
+          option.textContent = `${c.name} (${c.segment})`;
+          ui.clientSelect.appendChild(option);
+        });
+        setStatus(`Loaded ${clients.length} sample clients.`);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function quickstart() {
+      try {
+        const result = await api("/api/demo/quickstart", { method: "POST" });
+        const packet = await api(`/api/meeting-packets/${result.packetId}`);
+        bindPacket(packet);
+        setStatus("Quickstart completed.");
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function createPacket() {
+      try {
+        if (!ui.clientSelect.value) throw new Error("Select a client.");
+        if (!ui.meetingDate.value) throw new Error("Meeting date required.");
+        const packet = await api("/api/meeting-packets", {
+          method: "POST",
+          body: JSON.stringify({
+            clientId: ui.clientSelect.value,
+            meetingDate: ui.meetingDate.value,
+            lastMeetingDate: ui.lastMeetingDate.value || null
+          })
+        });
+        bindPacket(packet);
+        setStatus("Packet created.");
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function loadPacket() {
+      try {
+        const id = ui.packetIdInput.value.trim();
+        if (!id) throw new Error("Packet ID required.");
+        const packet = await api(`/api/meeting-packets/${id}`);
+        bindPacket(packet);
+        setStatus("Packet loaded.");
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function refreshPacket() {
+      try {
+        const id = ui.packetIdInput.value.trim();
+        if (!id) throw new Error("Packet ID required.");
+        const packet = await api(`/api/meeting-packets/${id}/refresh`, { method: "POST" });
+        bindPacket(packet);
+        setStatus("Packet refreshed.");
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function submitReview() {
+      try {
+        const id = ui.packetIdInput.value.trim();
+        if (!id) throw new Error("Packet ID required.");
+        await api(`/api/meeting-packets/${id}/submit-review`, { method: "POST" });
+        await loadPacket();
+        setStatus("Submitted for review.");
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function approvePacket() {
+      try {
+        const id = ui.packetIdInput.value.trim();
+        if (!id) throw new Error("Packet ID required.");
+        await api(`/api/meeting-packets/${id}/approve`, {
+          method: "POST",
+          body: JSON.stringify({ notes: ui.approvalNotes.value || "Approved" })
+        });
+        await loadPacket();
+        setStatus("Packet approved.");
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function runExport(endpoint) {
+      try {
+        const id = ui.packetIdInput.value.trim();
+        if (!id) throw new Error("Packet ID required.");
+        const result = await api(`/api/meeting-packets/${id}/export/${endpoint}`, { method: "POST" });
+        ui.exportOutput.textContent = JSON.stringify(result, null, 2);
+        setStatus(`${endpoint} completed.`);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    async function loadAudit() {
+      try {
+        const id = ui.packetIdInput.value.trim();
+        if (!id) throw new Error("Packet ID required.");
+        const events = await api(`/api/audit-events?packetId=${id}`);
+        ui.auditList.innerHTML = "";
+        events.forEach(event => {
+          const item = document.createElement("li");
+          item.textContent = `${event.timestamp} | ${event.action} | ${event.actor}`;
+          ui.auditList.appendChild(item);
+        });
+        setStatus(`Loaded ${events.length} audit events.`);
+      } catch (error) {
+        setStatus(error.message, true);
+      }
+    }
+
+    document.getElementById("btnLoadClients").addEventListener("click", loadClients);
+    document.getElementById("btnQuickstart").addEventListener("click", quickstart);
+    document.getElementById("btnCreatePacket").addEventListener("click", createPacket);
+    document.getElementById("btnLoadPacket").addEventListener("click", loadPacket);
+    document.getElementById("btnRefresh").addEventListener("click", refreshPacket);
+    document.getElementById("btnSubmitReview").addEventListener("click", submitReview);
+    document.getElementById("btnApprove").addEventListener("click", approvePacket);
+    document.getElementById("btnExportExcel").addEventListener("click", () => runExport("excel"));
+    document.getElementById("btnExportPowerPoint").addEventListener("click", () => runExport("powerpoint"));
+    document.getElementById("btnOutlookDraft").addEventListener("click", () => runExport("outlook-draft"));
+    document.getElementById("btnLoadAudit").addEventListener("click", loadAudit);
+
+    const today = new Date();
+    ui.meetingDate.value = new Date(today.getTime() + 7 * 86400000).toISOString().slice(0, 10);
+    ui.lastMeetingDate.value = new Date(today.getTime() - 90 * 86400000).toISOString().slice(0, 10);
+  </script>
+</body>
+</html>
