@@ -12,13 +12,13 @@ Central advisor/wealth strategist workspace that serves as both:
 
 ## Current modules
 - **Client Meeting Prep** (internal module, MVP)
-  - Draft/review/approve packet workflow
-  - Excel/PowerPoint/Outlook draft actions
-  - Audit timeline
+  - Draft/review/approve packet workflow with Office outputs
 - **Proposal Scenario Builder** (external repo, MVP)
   - Compare current vs. proposed client strategy scenarios
-  - Portfolio future value analysis with custom assumptions
-  - Repo: https://github.com/john-stromberg/advisor-proposal-scenario-builder
+  - GitHub: https://github.com/john-stromberg/advisor-proposal-scenario-builder
+- **Wealth Planning Calculator** (external repo, MVP)
+  - Retirement, FIRE, tax-aware growth, inflation scenarios
+  - GitHub: https://github.com/john-stromberg/wealth-planning-calculator
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -42,7 +42,6 @@ See `docs/module-registry.md` for onboarding rules.
 4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
 ## Planned external repos (next to scaffold)
-- `wealth-planning-calculator` - Retirement, FIRE, tax-aware growth, inflation scenarios
 - `portfolio-risk-lab` - Monte Carlo simulation, drawdown analysis, Sharpe/Sortino metrics
 - `cashflow-optimizer` - Income allocation rules for emergency fund, debt payoff, investing
 - `asset-allocation-backtester` - Historical backtests for allocation strategies
