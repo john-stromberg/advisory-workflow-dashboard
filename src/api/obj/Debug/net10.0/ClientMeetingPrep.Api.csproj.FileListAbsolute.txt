@@ -76,3 +76,4 @@ C:\Users\johns\source\repos\client-meeting-prep-office-suite\src\api\obj\Debug\n
 C:\Users\johns\source\repos\client-meeting-prep-office-suite\src\api\bin\Debug\net10.0\module-registry\modules.json
 C:\Users\johns\source\repos\client-meeting-prep-office-suite\src\api\obj\Debug\net10.0\compressed\x6vxbyamm2-{0}-dnazhanmhm-dnazhanmhm.gz
 C:\Users\johns\source\repos\client-meeting-prep-office-suite\src\api\obj\Debug\net10.0\compressed\voxgcsdo13-{0}-zl76rclk8j-zl76rclk8j.gz
+C:\Users\johns\source\repos\client-meeting-prep-office-suite\src\api\obj\Debug\net10.0\ClientMeetingPrep.Api.sourcelink.json

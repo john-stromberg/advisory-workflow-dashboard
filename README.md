@@ -19,6 +19,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Wealth Planning Calculator** (external repo, MVP)
   - Retirement, FIRE, tax-aware growth, inflation scenarios
   - GitHub: https://github.com/john-stromberg/wealth-planning-calculator
+- **Portfolio Risk Lab** (external repo, MVP)
+  - Monte Carlo simulation for portfolio risk analysis, VaR, CVaR, and drawdown metrics
+  - GitHub: https://github.com/john-stromberg/portfolio-risk-lab
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -42,7 +45,6 @@ See `docs/module-registry.md` for onboarding rules.
 4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
 ## Planned external repos (next to scaffold)
-- `portfolio-risk-lab` - Monte Carlo simulation, drawdown analysis, Sharpe/Sortino metrics
 - `cashflow-optimizer` - Income allocation rules for emergency fund, debt payoff, investing
 - `asset-allocation-backtester` - Historical backtests for allocation strategies
 - `client-wealth-dashboard` - KPI dashboard for net worth, liabilities, and scenario planning

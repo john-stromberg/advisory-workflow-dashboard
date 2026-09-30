@@ -39,11 +39,11 @@
     "id": "portfolio-risk-lab",
     "name": "Portfolio Risk Lab",
     "category": "Analysis",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/portfolio-risk-lab",
-    "description": "Monte Carlo simulation, drawdown analysis, Sharpe/Sortino metrics.",
+    "description": "Monte Carlo simulation for portfolio risk analysis, VaR, CVaR, and drawdown metrics.",
     "sortOrder": 4,
     "isEnabled": true
   },
