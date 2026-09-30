@@ -6,7 +6,7 @@
     "status": "MVP",
     "integrationType": "internal",
     "route": "/modules/meeting-prep.html",
-    "repositoryUrl": "https://github.com/your-org/advisory-workflow-dashboard",
+    "repositoryUrl": "https://github.com/john-stromberg/advisory-workflow-dashboard",
     "description": "Prepare client packet, run approvals, and generate Office outputs.",
     "sortOrder": 1,
     "isEnabled": true
@@ -24,27 +24,75 @@
     "isEnabled": true
   },
   {
-    "id": "tax-withdrawal-planner",
-    "name": "Tax-Aware Withdrawal Planner",
+    "id": "wealth-planning-calculator",
+    "name": "Wealth Planning Calculator",
     "category": "Planning",
     "status": "Planned",
     "integrationType": "external",
     "route": "",
-    "repositoryUrl": "https://github.com/your-org/advisor-tax-withdrawal-planner",
-    "description": "Model household withdrawal sequencing with tax impacts.",
+    "repositoryUrl": "https://github.com/john-stromberg/wealth-planning-calculator",
+    "description": "Retirement, FIRE, tax-aware growth, inflation scenarios.",
     "sortOrder": 3,
     "isEnabled": true
   },
   {
-    "id": "ips-compliance-checker",
-    "name": "IPS Compliance Checker",
-    "category": "Compliance",
+    "id": "portfolio-risk-lab",
+    "name": "Portfolio Risk Lab",
+    "category": "Analysis",
     "status": "Planned",
     "integrationType": "external",
     "route": "",
-    "repositoryUrl": "https://github.com/your-org/advisor-ips-compliance-checker",
-    "description": "Track IPS policy drift, constraints, and exception handling.",
+    "repositoryUrl": "https://github.com/john-stromberg/portfolio-risk-lab",
+    "description": "Monte Carlo simulation, drawdown analysis, Sharpe/Sortino metrics.",
     "sortOrder": 4,
+    "isEnabled": true
+  },
+  {
+    "id": "cashflow-optimizer",
+    "name": "Cashflow Optimizer",
+    "category": "Planning",
+    "status": "Planned",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/cashflow-optimizer",
+    "description": "Income allocation rules for emergency fund, debt payoff, investing.",
+    "sortOrder": 5,
+    "isEnabled": true
+  },
+  {
+    "id": "asset-allocation-backtester",
+    "name": "Asset Allocation Backtester",
+    "category": "Analysis",
+    "status": "Planned",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/asset-allocation-backtester",
+    "description": "Historical backtests for allocation strategies with performance analysis.",
+    "sortOrder": 6,
+    "isEnabled": true
+  },
+  {
+    "id": "client-wealth-dashboard",
+    "name": "Client Wealth Dashboard",
+    "category": "Monitoring",
+    "status": "Planned",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/client-wealth-dashboard",
+    "description": "KPI dashboard for net worth, liabilities, and scenario planning.",
+    "sortOrder": 7,
+    "isEnabled": true
+  },
+  {
+    "id": "financial-data-pipeline",
+    "name": "Financial Data Pipeline",
+    "category": "Infrastructure",
+    "status": "Planned",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/financial-data-pipeline",
+    "description": "ETL for market/economic data with scheduled updates.",
+    "sortOrder": 8,
     "isEnabled": true
   }
 ]

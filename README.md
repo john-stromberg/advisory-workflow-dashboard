@@ -42,8 +42,12 @@ See `docs/module-registry.md` for onboarding rules.
 4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
 ## Planned external repos (next to scaffold)
-- `advisor-tax-withdrawal-planner`
-- `advisor-ips-compliance-checker`
+- `wealth-planning-calculator` - Retirement, FIRE, tax-aware growth, inflation scenarios
+- `portfolio-risk-lab` - Monte Carlo simulation, drawdown analysis, Sharpe/Sortino metrics
+- `cashflow-optimizer` - Income allocation rules for emergency fund, debt payoff, investing
+- `asset-allocation-backtester` - Historical backtests for allocation strategies
+- `client-wealth-dashboard` - KPI dashboard for net worth, liabilities, and scenario planning
+- `financial-data-pipeline` - ETL for market/economic data with scheduled updates
 
 ## Next hardening
 - Add Entra ID auth and role-based access
