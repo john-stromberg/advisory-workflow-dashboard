@@ -15,6 +15,10 @@ Central advisor/wealth strategist workspace that serves as both:
   - Draft/review/approve packet workflow
   - Excel/PowerPoint/Outlook draft actions
   - Audit timeline
+- **Proposal Scenario Builder** (external repo, MVP)
+  - Compare current vs. proposed client strategy scenarios
+  - Portfolio future value analysis with custom assumptions
+  - Repo: https://github.com/john-stromberg/advisor-proposal-scenario-builder
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -32,13 +36,12 @@ See `docs/module-registry.md` for onboarding rules.
    - Meeting Prep module: `/modules/meeting-prep.html`
 
 ## Sample workflow today
-1. Open dashboard and launch **Client Meeting Prep**.
-2. Click **Load Clients**.
-3. Click **Quickstart Packet**.
-4. Run exports and load audit events.
+1. Open dashboard hub at `/`
+2. Click **Client Meeting Prep** to draft/review/approve packets, or click **Proposal Scenario Builder** to model strategy scenarios.
+3. For Meeting Prep: Load clients → Quickstart packet → Review exports → Load audit events.
+4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
-## Planned external repos (initial links)
-- `advisor-proposal-scenario-builder`
+## Planned external repos (next to scaffold)
 - `advisor-tax-withdrawal-planner`
 - `advisor-ips-compliance-checker`
 
