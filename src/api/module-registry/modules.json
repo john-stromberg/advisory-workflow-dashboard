@@ -15,10 +15,10 @@
     "id": "proposal-scenario-builder",
     "name": "Proposal Scenario Builder",
     "category": "Planning",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
-    "repositoryUrl": "https://github.com/your-org/advisor-proposal-scenario-builder",
+    "repositoryUrl": "https://github.com/john-stromberg/advisor-proposal-scenario-builder",
     "description": "Compare current versus proposed client strategy scenarios.",
     "sortOrder": 2,
     "isEnabled": true
