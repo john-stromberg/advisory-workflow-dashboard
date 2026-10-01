@@ -106,5 +106,17 @@
     "description": "Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts.",
     "sortOrder": 9,
     "isEnabled": true
+  },
+  {
+    "id": "household-cashflow-forecaster",
+    "name": "Household Cashflow Forecaster",
+    "category": "Advisor Workflow",
+    "status": "MVP",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/household-cashflow-forecaster",
+    "description": "Quarterly and yearly liquidity forecasting with market, inflation, and unexpected-expense stress toggles.",
+    "sortOrder": 10,
+    "isEnabled": true
   }
 ]

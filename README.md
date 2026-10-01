@@ -37,6 +37,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Tax-Aware Withdrawal Planner** (external repo, MVP)
   - Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts
   - GitHub: https://github.com/john-stromberg/tax-aware-withdrawal-planner
+- **Household Cashflow Forecaster** (external repo, MVP)
+  - Quarterly and yearly liquidity forecasting with market, inflation, and unexpected-expense stress toggles
+  - GitHub: https://github.com/john-stromberg/household-cashflow-forecaster
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -61,7 +64,6 @@ See `docs/module-registry.md` for onboarding rules.
 
 ## Planned external repos (next to scaffold)
 - `client-strategy-workbench` - Central household goals/constraints/IPS workspace and recommendations
-- `household-cashflow-forecaster` - Year/quarter liquidity forecasting with stress toggles
 - `portfolio-policy-compliance-checker` - IPS drift/concentration/rebalancing rule engine
 - `advisor-communication-generator` - Plain-English client update drafting with configurable tone
 - `planning-assumptions-governance` - Versioned assumptions with approvals and audit trail
