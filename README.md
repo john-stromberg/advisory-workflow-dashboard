@@ -43,6 +43,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Portfolio Policy Compliance Checker** (external repo, MVP)
   - IPS drift, concentration, restricted-holding, and rebalance-trigger rule checks with exception reporting
   - GitHub: https://github.com/john-stromberg/portfolio-policy-compliance-checker
+- **Advisor Communication Generator** (external repo, MVP)
+  - Plain-English client update drafting with configurable tone and compliance-safe messaging structure
+  - GitHub: https://github.com/john-stromberg/advisor-communication-generator
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -67,7 +70,6 @@ See `docs/module-registry.md` for onboarding rules.
 
 ## Planned external repos (next to scaffold)
 - `client-strategy-workbench` - Central household goals/constraints/IPS workspace and recommendations
-- `advisor-communication-generator` - Plain-English client update drafting with configurable tone
 - `planning-assumptions-governance` - Versioned assumptions with approvals and audit trail
 
 ## Next hardening

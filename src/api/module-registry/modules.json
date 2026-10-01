@@ -130,5 +130,17 @@
     "description": "IPS drift, concentration, restricted-holding, and rebalance-trigger rule checks with exception reporting.",
     "sortOrder": 11,
     "isEnabled": true
+  },
+  {
+    "id": "advisor-communication-generator",
+    "name": "Advisor Communication Generator",
+    "category": "Advisor Workflow",
+    "status": "MVP",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/advisor-communication-generator",
+    "description": "Plain-English client update drafting with configurable tone and compliance-safe messaging structure.",
+    "sortOrder": 12,
+    "isEnabled": true
   }
 ]
