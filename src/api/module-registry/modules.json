@@ -63,11 +63,11 @@
     "id": "asset-allocation-backtester",
     "name": "Asset Allocation Backtester",
     "category": "Analysis",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/asset-allocation-backtester",
-    "description": "Historical backtests for allocation strategies with performance analysis.",
+    "description": "Allocation strategy backtesting with CAGR, volatility, Sharpe ratio, and drawdown metrics.",
     "sortOrder": 6,
     "isEnabled": true
   },

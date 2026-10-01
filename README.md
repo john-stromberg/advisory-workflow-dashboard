@@ -25,6 +25,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Cashflow Optimizer** (external repo, MVP)
   - Monthly cashflow optimization for emergency reserves, debt payoff, and investing allocation
   - GitHub: https://github.com/john-stromberg/cashflow-optimizer
+- **Asset Allocation Backtester** (external repo, MVP)
+  - Allocation strategy backtesting with CAGR, volatility, Sharpe ratio, and drawdown metrics
+  - GitHub: https://github.com/john-stromberg/asset-allocation-backtester
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -48,7 +51,6 @@ See `docs/module-registry.md` for onboarding rules.
 4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
 ## Planned external repos (next to scaffold)
-- `asset-allocation-backtester` - Historical backtests for allocation strategies
 - `client-wealth-dashboard` - KPI dashboard for net worth, liabilities, and scenario planning
 - `financial-data-pipeline` - ETL for market/economic data with scheduled updates
 
