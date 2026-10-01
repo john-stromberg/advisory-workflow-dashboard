@@ -34,6 +34,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Financial Data Pipeline** (external repo, MVP)
   - Lightweight ETL pipeline for market, economic, and client cashflow feature sets
   - GitHub: https://github.com/john-stromberg/financial-data-pipeline
+- **Tax-Aware Withdrawal Planner** (external repo, MVP)
+  - Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts
+  - GitHub: https://github.com/john-stromberg/tax-aware-withdrawal-planner
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -57,7 +60,11 @@ See `docs/module-registry.md` for onboarding rules.
 4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
 ## Planned external repos (next to scaffold)
-- `financial-data-pipeline` - ETL for market/economic data with scheduled updates
+- `client-strategy-workbench` - Central household goals/constraints/IPS workspace and recommendations
+- `household-cashflow-forecaster` - Year/quarter liquidity forecasting with stress toggles
+- `portfolio-policy-compliance-checker` - IPS drift/concentration/rebalancing rule engine
+- `advisor-communication-generator` - Plain-English client update drafting with configurable tone
+- `planning-assumptions-governance` - Versioned assumptions with approvals and audit trail
 
 ## Next hardening
 - Add Entra ID auth and role-based access

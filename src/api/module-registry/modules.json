@@ -94,5 +94,17 @@
     "description": "Lightweight ETL pipeline for market, economic, and client cashflow feature sets.",
     "sortOrder": 8,
     "isEnabled": true
+  },
+  {
+    "id": "tax-aware-withdrawal-planner",
+    "name": "Tax-Aware Withdrawal Planner",
+    "category": "Advisor Workflow",
+    "status": "MVP",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/tax-aware-withdrawal-planner",
+    "description": "Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts.",
+    "sortOrder": 9,
+    "isEnabled": true
   }
 ]
