@@ -75,11 +75,11 @@
     "id": "client-wealth-dashboard",
     "name": "Client Wealth Dashboard",
     "category": "Monitoring",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/client-wealth-dashboard",
-    "description": "KPI dashboard for net worth, liabilities, and scenario planning.",
+    "description": "Advisor KPI dashboard for net worth, liquidity, debt ratio, and scenario comparisons.",
     "sortOrder": 7,
     "isEnabled": true
   },
