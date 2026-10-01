@@ -7,7 +7,7 @@
     "integrationType": "internal",
     "route": "/modules/meeting-prep.html",
     "repositoryUrl": "https://github.com/john-stromberg/advisory-workflow-dashboard",
-    "description": "Prepare client packet, run approvals, and generate Office outputs.",
+    "description": "[Shared Module] Prepare client packet, run approvals, and generate Office outputs.",
     "sortOrder": 1,
     "isEnabled": true
   },
@@ -19,7 +19,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/advisor-proposal-scenario-builder",
-    "description": "Compare current versus proposed client strategy scenarios.",
+    "description": "[Shared Module] Compare current versus proposed client strategy scenarios.",
     "sortOrder": 2,
     "isEnabled": true
   },
@@ -31,7 +31,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/wealth-planning-calculator",
-    "description": "Retirement, FIRE, tax-aware growth, inflation scenarios.",
+    "description": "[Core Analysis Suite] Retirement, FIRE, tax-aware growth, inflation scenarios.",
     "sortOrder": 3,
     "isEnabled": true
   },
@@ -43,7 +43,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/portfolio-risk-lab",
-    "description": "Monte Carlo simulation for portfolio risk analysis, VaR, CVaR, and drawdown metrics.",
+    "description": "[Core Analysis Suite] Monte Carlo simulation for portfolio risk analysis, VaR, CVaR, and drawdown metrics.",
     "sortOrder": 4,
     "isEnabled": true
   },
@@ -55,7 +55,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/cashflow-optimizer",
-    "description": "Monthly cashflow optimization for emergency reserves, debt payoff, and investing allocation.",
+    "description": "[Core Analysis Suite] Monthly cashflow optimization for emergency reserves, debt payoff, and investing allocation.",
     "sortOrder": 5,
     "isEnabled": true
   },
@@ -67,7 +67,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/asset-allocation-backtester",
-    "description": "Allocation strategy backtesting with CAGR, volatility, Sharpe ratio, and drawdown metrics.",
+    "description": "[Core Analysis Suite] Allocation strategy backtesting with CAGR, volatility, Sharpe ratio, and drawdown metrics.",
     "sortOrder": 6,
     "isEnabled": true
   },
@@ -79,7 +79,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/client-wealth-dashboard",
-    "description": "Advisor KPI dashboard for net worth, liquidity, debt ratio, and scenario comparisons.",
+    "description": "[Core Analysis Suite] Advisor KPI dashboard for net worth, liquidity, debt ratio, and scenario comparisons.",
     "sortOrder": 7,
     "isEnabled": true
   },
@@ -91,7 +91,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/financial-data-pipeline",
-    "description": "Lightweight ETL pipeline for market, economic, and client cashflow feature sets.",
+    "description": "[Core Analysis Suite] Lightweight ETL pipeline for market, economic, and client cashflow feature sets.",
     "sortOrder": 8,
     "isEnabled": true
   },
@@ -103,7 +103,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/tax-aware-withdrawal-planner",
-    "description": "Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts.",
+    "description": "[Workflow Automation Suite] Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts.",
     "sortOrder": 9,
     "isEnabled": true
   },
@@ -115,7 +115,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/household-cashflow-forecaster",
-    "description": "Quarterly and yearly liquidity forecasting with market, inflation, and unexpected-expense stress toggles.",
+    "description": "[Workflow Automation Suite] Quarterly and yearly liquidity forecasting with market, inflation, and unexpected-expense stress toggles.",
     "sortOrder": 10,
     "isEnabled": true
   },
@@ -127,7 +127,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/portfolio-policy-compliance-checker",
-    "description": "IPS drift, concentration, restricted-holding, and rebalance-trigger rule checks with exception reporting.",
+    "description": "[Workflow Automation Suite] IPS drift, concentration, restricted-holding, and rebalance-trigger rule checks with exception reporting.",
     "sortOrder": 11,
     "isEnabled": true
   },
@@ -139,7 +139,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/advisor-communication-generator",
-    "description": "Plain-English client update drafting with configurable tone and compliance-safe messaging structure.",
+    "description": "[Workflow Automation Suite] Plain-English client update drafting with configurable tone and compliance-safe messaging structure.",
     "sortOrder": 12,
     "isEnabled": true
   },
@@ -151,7 +151,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/planning-assumptions-governance",
-    "description": "Version-controlled assumptions with submit/approve workflow and audit trail visibility.",
+    "description": "[Workflow Automation Suite] Version-controlled assumptions with submit/approve workflow and audit trail visibility.",
     "sortOrder": 13,
     "isEnabled": true
   }

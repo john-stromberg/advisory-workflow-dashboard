@@ -10,12 +10,16 @@ Central advisor/wealth strategist workspace that serves as both:
 - Mock data for v1
 - Strong module registry for internal modules and external GitHub repos
 
-## Current modules
+## Module suites
+
+### Shared modules (used across both suites)
 - **Client Meeting Prep** (internal module, MVP)
   - Draft/review/approve packet workflow with Office outputs
 - **Proposal Scenario Builder** (external repo, MVP)
   - Compare current vs. proposed client strategy scenarios
   - GitHub: https://github.com/john-stromberg/advisor-proposal-scenario-builder
+
+### Core analysis suite (wealth and portfolio analysis)
 - **Wealth Planning Calculator** (external repo, MVP)
   - Retirement, FIRE, tax-aware growth, inflation scenarios
   - GitHub: https://github.com/john-stromberg/wealth-planning-calculator
@@ -34,6 +38,8 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Financial Data Pipeline** (external repo, MVP)
   - Lightweight ETL pipeline for market, economic, and client cashflow feature sets
   - GitHub: https://github.com/john-stromberg/financial-data-pipeline
+
+### Workflow automation suite (advisor workflow + deliverables)
 - **Tax-Aware Withdrawal Planner** (external repo, MVP)
   - Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts
   - GitHub: https://github.com/john-stromberg/tax-aware-withdrawal-planner
@@ -49,6 +55,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Planning Assumptions Governance** (external repo, MVP)
   - Version-controlled assumptions with submit/approve workflow and audit trail visibility
   - GitHub: https://github.com/john-stromberg/planning-assumptions-governance
+- **Client Strategy Workbench** (external repo, MVP)
+  - Central household goals/constraints/IPS workspace and recommendations
+  - GitHub: https://github.com/john-stromberg/client-strategy-workbench
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -72,8 +81,7 @@ See `docs/module-registry.md` for onboarding rules.
 4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
 
 ## Planned external repos (next to scaffold)
-- `client-strategy-workbench` - Central household goals/constraints/IPS workspace and recommendations
-- (all other currently planned workflow-suite repos are now MVP scaffolded)
+- (none - both the core analysis suite and workflow automation suite are now MVP scaffolded)
 
 ## Next hardening
 - Add Entra ID auth and role-based access
