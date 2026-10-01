@@ -1,13 +1,13 @@
 [
   {
-    "id": "meeting-prep",
-    "name": "Client Meeting Prep",
+    "id": "client-meeting-prep-automation",
+    "name": "Client Meeting Prep Automation",
     "category": "Advisor Workflow",
     "status": "MVP",
-    "integrationType": "internal",
-    "route": "/modules/meeting-prep.html",
-    "repositoryUrl": "https://github.com/john-stromberg/advisory-workflow-dashboard",
-    "description": "[Shared Module] Prepare client packet, run approvals, and generate Office outputs.",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/client-meeting-prep-automation",
+    "description": "[Workflow Automation Suite] Pre-meeting brief generation, change summaries, action checklists, and Office deliverable workflow outputs.",
     "sortOrder": 1,
     "isEnabled": true
   },
@@ -19,7 +19,7 @@
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/advisor-proposal-scenario-builder",
-    "description": "[Shared Module] Compare current versus proposed client strategy scenarios.",
+    "description": "[Workflow Automation Suite] Compare current versus proposed client strategy scenarios with Office-ready proposal packet workflow outputs.",
     "sortOrder": 2,
     "isEnabled": true
   },

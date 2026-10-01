@@ -12,13 +12,6 @@ Central advisor/wealth strategist workspace that serves as both:
 
 ## Module suites
 
-### Shared modules (used across both suites)
-- **Client Meeting Prep** (internal module, MVP)
-  - Draft/review/approve packet workflow with Office outputs
-- **Proposal Scenario Builder** (external repo, MVP)
-  - Compare current vs. proposed client strategy scenarios
-  - GitHub: https://github.com/john-stromberg/advisor-proposal-scenario-builder
-
 ### Core analysis suite (wealth and portfolio analysis)
 - **Wealth Planning Calculator** (external repo, MVP)
   - Retirement, FIRE, tax-aware growth, inflation scenarios
@@ -40,6 +33,12 @@ Central advisor/wealth strategist workspace that serves as both:
   - GitHub: https://github.com/john-stromberg/financial-data-pipeline
 
 ### Workflow automation suite (advisor workflow + deliverables)
+- **Client Meeting Prep Automation** (external repo, MVP)
+  - Pre-meeting brief generation, change summaries, action checklists, and Office deliverable workflow outputs
+  - GitHub: https://github.com/john-stromberg/client-meeting-prep-automation
+- **Proposal Scenario Builder** (external repo, MVP)
+  - Compare current vs. proposed client strategy scenarios with Office-ready proposal packet workflow outputs
+  - GitHub: https://github.com/john-stromberg/advisor-proposal-scenario-builder
 - **Tax-Aware Withdrawal Planner** (external repo, MVP)
   - Bracket-aware withdrawal sequencing with RMD guardrails across taxable, tax-deferred, and Roth accounts
   - GitHub: https://github.com/john-stromberg/tax-aware-withdrawal-planner
@@ -76,9 +75,9 @@ See `docs/module-registry.md` for onboarding rules.
 
 ## Sample workflow today
 1. Open dashboard hub at `/`
-2. Click **Client Meeting Prep** to draft/review/approve packets, or click **Proposal Scenario Builder** to model strategy scenarios.
-3. For Meeting Prep: Load clients → Quickstart packet → Review exports → Load audit events.
-4. For Proposal Builder: Enter client details → Create current/proposed scenarios → Run comparison.
+2. Click **Client Meeting Prep Automation** to generate pre-meeting brief outputs, or click **Proposal Scenario Builder** to build proposal packets.
+3. For Meeting Prep Automation: Enter meeting context → Build packet → Review Word/Excel/Outlook/SharePoint deliverable references.
+4. For Proposal Builder: Enter client details + planning notes → Create current/proposed scenarios → Run comparison and review deliverable references.
 
 ## Planned external repos (next to scaffold)
 - (none - both the core analysis suite and workflow automation suite are now MVP scaffolded)
