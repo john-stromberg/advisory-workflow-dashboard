@@ -46,6 +46,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Advisor Communication Generator** (external repo, MVP)
   - Plain-English client update drafting with configurable tone and compliance-safe messaging structure
   - GitHub: https://github.com/john-stromberg/advisor-communication-generator
+- **Planning Assumptions Governance** (external repo, MVP)
+  - Version-controlled assumptions with submit/approve workflow and audit trail visibility
+  - GitHub: https://github.com/john-stromberg/planning-assumptions-governance
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
@@ -70,7 +73,7 @@ See `docs/module-registry.md` for onboarding rules.
 
 ## Planned external repos (next to scaffold)
 - `client-strategy-workbench` - Central household goals/constraints/IPS workspace and recommendations
-- `planning-assumptions-governance` - Versioned assumptions with approvals and audit trail
+- (all other currently planned workflow-suite repos are now MVP scaffolded)
 
 ## Next hardening
 - Add Entra ID auth and role-based access

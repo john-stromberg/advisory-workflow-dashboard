@@ -142,5 +142,17 @@
     "description": "Plain-English client update drafting with configurable tone and compliance-safe messaging structure.",
     "sortOrder": 12,
     "isEnabled": true
+  },
+  {
+    "id": "planning-assumptions-governance",
+    "name": "Planning Assumptions Governance",
+    "category": "Advisor Workflow",
+    "status": "MVP",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/planning-assumptions-governance",
+    "description": "Version-controlled assumptions with submit/approve workflow and audit trail visibility.",
+    "sortOrder": 13,
+    "isEnabled": true
   }
 ]
