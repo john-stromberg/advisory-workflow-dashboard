@@ -118,5 +118,17 @@
     "description": "Quarterly and yearly liquidity forecasting with market, inflation, and unexpected-expense stress toggles.",
     "sortOrder": 10,
     "isEnabled": true
+  },
+  {
+    "id": "portfolio-policy-compliance-checker",
+    "name": "Portfolio Policy Compliance Checker",
+    "category": "Advisor Workflow",
+    "status": "MVP",
+    "integrationType": "external",
+    "route": "",
+    "repositoryUrl": "https://github.com/john-stromberg/portfolio-policy-compliance-checker",
+    "description": "IPS drift, concentration, restricted-holding, and rebalance-trigger rule checks with exception reporting.",
+    "sortOrder": 11,
+    "isEnabled": true
   }
 ]
