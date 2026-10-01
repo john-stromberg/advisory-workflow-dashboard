@@ -51,11 +51,11 @@
     "id": "cashflow-optimizer",
     "name": "Cashflow Optimizer",
     "category": "Planning",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/cashflow-optimizer",
-    "description": "Income allocation rules for emergency fund, debt payoff, investing.",
+    "description": "Monthly cashflow optimization for emergency reserves, debt payoff, and investing allocation.",
     "sortOrder": 5,
     "isEnabled": true
   },
