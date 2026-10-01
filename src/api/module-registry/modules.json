@@ -87,11 +87,11 @@
     "id": "financial-data-pipeline",
     "name": "Financial Data Pipeline",
     "category": "Infrastructure",
-    "status": "Planned",
+    "status": "MVP",
     "integrationType": "external",
     "route": "",
     "repositoryUrl": "https://github.com/john-stromberg/financial-data-pipeline",
-    "description": "ETL for market/economic data with scheduled updates.",
+    "description": "Lightweight ETL pipeline for market, economic, and client cashflow feature sets.",
     "sortOrder": 8,
     "isEnabled": true
   }

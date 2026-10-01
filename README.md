@@ -31,6 +31,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Client Wealth Dashboard** (external repo, MVP)
   - Advisor KPI dashboard for net worth, liquidity, debt ratio, and scenario comparisons
   - GitHub: https://github.com/john-stromberg/client-wealth-dashboard
+- **Financial Data Pipeline** (external repo, MVP)
+  - Lightweight ETL pipeline for market, economic, and client cashflow feature sets
+  - GitHub: https://github.com/john-stromberg/financial-data-pipeline
 
 ## Registry and integration model
 - Module metadata source: `src/api/module-registry/modules.json`
