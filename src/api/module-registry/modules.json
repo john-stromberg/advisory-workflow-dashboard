@@ -65,7 +65,7 @@
     "category": "Analysis",
     "status": "MVP",
     "integrationType": "external",
-    "route": "",
+    "route": "http://localhost:8502",
     "repositoryUrl": "https://github.com/john-stromberg/asset-allocation-backtester",
     "description": "[Core Analysis Suite] Allocation strategy backtesting with CAGR, volatility, Sharpe ratio, and drawdown metrics.",
     "sortOrder": 6,

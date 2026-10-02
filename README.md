@@ -23,8 +23,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Cashflow Optimizer** (external repo, MVP)
   - Monthly cashflow optimization for emergency reserves, debt payoff, and investing allocation
   - GitHub: https://github.com/john-stromberg/cashflow-optimizer
-- **Asset Allocation Backtester** (external repo, MVP)
+- **Asset Allocation Backtester** (independent Streamlit app, MVP)
   - Allocation strategy backtesting with CAGR, volatility, Sharpe ratio, and drawdown metrics
+  - App: http://localhost:8502
   - GitHub: https://github.com/john-stromberg/asset-allocation-backtester
 - **Client Wealth Dashboard** (external repo, MVP)
   - Advisor KPI dashboard for net worth, liquidity, debt ratio, and scenario comparisons
