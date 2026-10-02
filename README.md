@@ -16,8 +16,9 @@ Central advisor/wealth strategist workspace that serves as both:
 - **Wealth Planning Calculator** (external repo, MVP)
   - Retirement, FIRE, tax-aware growth, inflation scenarios
   - GitHub: https://github.com/john-stromberg/wealth-planning-calculator
-- **Portfolio Risk Lab** (external repo, MVP)
+- **Portfolio Risk Lab** (independent Streamlit app, MVP)
   - Monte Carlo simulation for portfolio risk analysis, VaR, CVaR, and drawdown metrics
+  - App: http://localhost:8501
   - GitHub: https://github.com/john-stromberg/portfolio-risk-lab
 - **Cashflow Optimizer** (external repo, MVP)
   - Monthly cashflow optimization for emergency reserves, debt payoff, and investing allocation
@@ -62,7 +63,8 @@ Central advisor/wealth strategist workspace that serves as both:
 - Module metadata source: `src/api/module-registry/modules.json`
 - Registry API: `GET /api/module-registry`
 - UI renders module tiles from registry at runtime.
-- Internal modules open local routes; external modules open linked repos.
+- Internal modules open local routes.
+- External tools with a `route` open their hosted UI. Tools without a route open the linked repo.
 
 See `docs/module-registry.md` for onboarding rules.
 

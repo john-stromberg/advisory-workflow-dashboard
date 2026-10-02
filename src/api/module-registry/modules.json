@@ -41,7 +41,7 @@
     "category": "Analysis",
     "status": "MVP",
     "integrationType": "external",
-    "route": "",
+    "route": "http://localhost:8501",
     "repositoryUrl": "https://github.com/john-stromberg/portfolio-risk-lab",
     "description": "[Core Analysis Suite] Monte Carlo simulation for portfolio risk analysis, VaR, CVaR, and drawdown metrics.",
     "sortOrder": 4,

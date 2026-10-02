@@ -69,8 +69,8 @@
         const tile = document.createElement("section");
         tile.className = "tile";
 
-        const routeOrRepo = module.integrationType === "internal" ? module.route : module.repositoryUrl;
-        const actionLabel = module.integrationType === "internal" ? "Open Module" : "Open Repository";
+        const routeOrRepo = module.route || module.repositoryUrl;
+        const actionLabel = module.route ? "Open Tool" : "Open Repository";
 
         tile.innerHTML = `
           <div class="row">
