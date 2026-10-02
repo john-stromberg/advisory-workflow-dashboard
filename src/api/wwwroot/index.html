@@ -11,7 +11,7 @@
     header h1 { margin: 0; font-size: 22px; }
     header p { margin: 6px 0 0; opacity: .9; }
     main { padding: 18px; }
-    .toolbar { display: flex; gap: 10px; align-items: center; margin-bottom: 14px; }
+    .toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 14px; }
     button { border: 0; border-radius: 8px; padding: 9px 12px; cursor: pointer; background: #1f3c88; color: #fff; }
     button.secondary { background: #4a5f9c; }
     #status { font-size: 13px; color: #2a3558; }
@@ -27,12 +27,13 @@
 <body>
   <header>
     <h1>Advisory Workflow Dashboard</h1>
-    <p>Central advisor workspace with modular tools and loose integration registry.</p>
+    <p>Central advisor workspace with module pages for workflow automation and analysis tools.</p>
   </header>
   <main>
     <div class="toolbar">
       <button id="btnRefresh">Refresh Modules</button>
       <button id="btnOpenMeetingPrep" class="secondary">Open Meeting Prep</button>
+      <button id="btnOpenProposal" class="secondary">Open Proposal Builder</button>
       <span id="status">Loading module registry...</span>
     </div>
     <div id="moduleGrid" class="grid"></div>
@@ -68,20 +69,15 @@
         const tile = document.createElement("section");
         tile.className = "tile";
 
-        const routeOrRepo = module.integrationType === "internal"
-          ? module.route
-          : module.repositoryUrl;
-
-        const actionLabel = module.integrationType === "internal"
-          ? "Open Module"
-          : "Open Repository";
+        const routeOrRepo = module.integrationType === "internal" ? module.route : module.repositoryUrl;
+        const actionLabel = module.integrationType === "internal" ? "Open Module" : "Open Repository";
 
         tile.innerHTML = `
           <div class="row">
             <strong>${module.name}</strong>
             <span class="badge">${module.status}</span>
           </div>
-          <div class="meta">${module.category} • ${module.integrationType}</div>
+          <div class="meta">${module.category} Â· ${module.integrationType}</div>
           <div>${module.description}</div>
           <div class="row">
             <a class="link" href="${module.repositoryUrl}" target="_blank" rel="noreferrer">Repo</a>
@@ -108,6 +104,9 @@
     document.getElementById("btnRefresh").addEventListener("click", loadRegistry);
     document.getElementById("btnOpenMeetingPrep").addEventListener("click", () => {
       window.location.href = "/modules/meeting-prep.html";
+    });
+    document.getElementById("btnOpenProposal").addEventListener("click", () => {
+      window.location.href = "/modules/proposal-scenario-builder.html";
     });
 
     loadRegistry();
