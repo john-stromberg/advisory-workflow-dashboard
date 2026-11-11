@@ -1,3 +1,8 @@
+> **Moved:** This project is maintained in [advisor-platform/projects/advisory-workflow-dashboard](https://github.com/john-stromberg/advisor-platform/tree/main/projects/advisory-workflow-dashboard).
+> This repository is retained as a historical snapshot.
+
+---
+
 # advisory-workflow-dashboard
 
 Central advisor/wealth strategist workspace that serves as both:
